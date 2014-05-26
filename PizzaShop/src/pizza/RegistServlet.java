@@ -26,8 +26,10 @@ public class RegistServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String user = req.getParameter("user");
         String password = req.getParameter("password");
+        String address = req.getParameter("address");
+        String mail = req.getParameter("mail");
         Date date = Calendar.getInstance().getTime();
-        LinkData data = new LinkData(user,password,date);
+        LinkData data = new LinkData(user,password,address,mail,date);
         PersistenceManagerFactory factory = PMF.get();
         PersistenceManager manager = factory.getPersistenceManager();
         try {
@@ -35,6 +37,6 @@ public class RegistServlet extends HttpServlet {
         } finally {
             manager.close();
         }
-        resp.sendRedirect("/index.html");
+        resp.sendRedirect("/menu.html");
     }
 }
