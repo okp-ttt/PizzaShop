@@ -34,8 +34,12 @@ public class PizzaShopServlet extends HttpServlet {
         String res = "[";
         if (list != null){
             for(LinkData data:list){
-                res += "{id:" + data.getId() + ",user:'" + data.getUser() + "',password:'" +
-                    data.getPassword() + "',date:'" + data.getDatetime();
+                res += "{id:" + data.getId()
+                		+ ",user:'" + data.getUser()
+                		+ "',password:'" +data.getPassword()
+                		+ "',address:'" + data.getAddress()
+                		+ "',mail:'" + data.getMail()
+                		+ "',date:'" + data.getDatetime() + "'},";
             }
         }
         res += "]";
