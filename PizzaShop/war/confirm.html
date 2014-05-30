@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>確認画面</title>
+<script type="text/javascript" src="lib.js"></script>
+<script type="text/javascript">
+	
+</script>
+<style>
+<!--
+body {
+	background-color: aqua;
+}
+-->
+</style>
+</head>
+<body>
+	<div align="center">
+		<h1>確認画面</h1>
+		<p>ご注文内容の確認です。</p>
+		<table>
+			<td>品名</td>
+			<td>金額</td>
+			<td>個数</td>
+			<td>合計金額</td>
+			<c:forEach items="${data}" var="rec">
+				<tr>
+					<td>${rec.name}</td>
+					<td>${rec.price}円</td>
+					<td>${rec.number}個</td>
+					<td>${rec.eachtotal}円</td>
+				</tr>
+			</c:forEach>
+		</table>
+		<p>合計金額 ${total}円</p>
+
+		<input type="submit" value="情報入力画面" />
+	</div>
+</body>
+</html>
